@@ -11,18 +11,9 @@
     border-radius: 3%;
 }
 
-@media screen and (max-width: 459px) {
+@media screen and (max-width: 459px){
     .popup__container {
         max-width: 282px;
         min-height: 322px;
-    }
-}
-
-
-@media screen and (max-width: 320px) {
-    .popup__container {
-        max-width: 282px;
-        min-height: 322px;
-        margin-top: -123px;
     }
 }

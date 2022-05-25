@@ -6,8 +6,9 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid #FFFFFF;
-    min-width: 24px;
-    min-height: 24px;
+    width: 24px;
+    height: 24px;
+    align-self: center;
 }
 
 .profile__edit-button:hover {
@@ -17,8 +18,8 @@
 
 @media screen and (max-width: 320px) {
     .profile__edit-button {
-    min-width: 18px;
-    min-height: 18px;
+    width: 18px;
+    height: 18px;
     margin-left: 10px;
     }
 }

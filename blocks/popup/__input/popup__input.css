@@ -1,0 +1,14 @@
+.popup__input {
+border: none;
+width: 100%;
+text-align: start;
+padding: 0 0 13px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+box-sizing: border-box;
+}
+
+@media screen and (max-width: 940px) {
+    .profile__input {
+        text-align: center;
+    }
+}

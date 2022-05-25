@@ -10,80 +10,78 @@
 <body class="root">
     <header class="header">
         <img src="./images/Vector.svg" class="header__logo" alt="Логотип Mesto Russia">
-        <div class="header__line"></div>
     </header>
     <main>
         <section class="profile">
-            <div class="profile__avatar"></div>
+            <div class="profile__avatar" style="background-image: url(./images/image.jpg);"></div>
             <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто<button class="profile__edit-button"></button></h1>
-                <h2 class="profile__activity">Исследователь океана</h2>
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <button class="profile__edit-button" type="button"></button>
+                <p class="profile__activity">Исследователь океана</p>
             </div>
-            <button class="profile__add-button"></button>
+            <button class="profile__add-button" type="button"></button>
         </section>
 
         <section class="elements">
-            <div class="elements__element">
-                <img src="./images/sina-bahar-3-nj5_S29ko-unsplash.jpg" class="elements__image" alt="Фото моста в Исфахане, Иран">
-                <div class="elements__text">
-                    <h3 class="elements__place">Исфахан</h3>
-                    <div class="elements__like"></div>
+            <article class="element">
+                <img src="./images/sina-bahar-3-nj5_S29ko-unsplash.jpg" class="element__image" alt="Фото моста в Исфахане, Иран">
+                <div class="element__text">
+                    <h2 class="element__place">Исфахан</h2>
+                    <button class="element__like" type="button"></button>
                 </div>
-            </div>
-            <div class="elements__element">
-                <img src="./images/mehdi-el-marouazi-TUG65bdx6P0-unsplash.jpg" class="elements__image" alt="Фото глиняных домиков на фоне пальмы">
-                <div class="elements__text">
-                    <h3 class="elements__place">Марракеш</h3>
-                    <div class="elements__like"></div>
+            </article>
+            <article class="element">
+                <img src="./images/mehdi-el-marouazi-TUG65bdx6P0-unsplash.jpg" class="element__image" alt="Фото глиняных домиков на фоне пальмы">
+                <div class="element__text">
+                    <h2 class="element__place">Марракеш</h2>
+                    <button class="element__like" type="button"></button>
                 </div>
-            </div>
-            <div class="elements__element">
-                <img src="./images/jaanus-jagomagi-pE046fSd4dA-unsplash.jpg" class="elements__image" alt="Вид на крыши старого города в Таллинне, Эстония">
-                <div class="elements__text">
-                    <h3 class="elements__place">Эстония</h3>
-                    <div class="elements__like"></div>
+            </article>
+            <article class="element">
+                <img src="./images/jaanus-jagomagi-pE046fSd4dA-unsplash.jpg" class="element__image" alt="Вид на крыши старого города в Таллинне, Эстония">
+                <div class="element__text">
+                    <h2 class="element__place">Эстония</h2>
+                    <button class="element__like" type="button"></button>
                 </div>
-            </div>
-            <div class="elements__element">
-                <img src="./images/matthew-hamilton-0uo6dcW8CbM-unsplash.jpg" class="elements__image" alt="Фото церкви в Калифорнии, США">
-                <div class="elements__text">
-                    <h3 class="elements__place">Скоттсдейл</h3>
-                    <div class="elements__like"></div>
+            </article>
+            <article class="element">
+                <img src="./images/matthew-hamilton-0uo6dcW8CbM-unsplash.jpg" class="element__image" alt="Фото церкви в Калифорнии, США">
+                <div class="element__text">
+                    <h2 class="element__place">Скоттсдейл</h2>
+                    <button class="element__like" type="button"></button>
                 </div>
-            </div>
-            <div class="elements__element">
-                <img src="./images/alex-quezada-pcXtBiEuZ4M-unsplash.jpg" class="elements__image" alt="Узкая ульца в Барселоне, украшенная гирляндой, Испания">
-                <div class="elements__text">
-                    <h3 class="elements__place">Барселона</h3>
-                    <div class="elements__like"></div>
+            </article>
+            <article class="element">
+                <img src="./images/alex-quezada-pcXtBiEuZ4M-unsplash.jpg" class="element__image" alt="Узкая ульца в Барселоне, украшенная гирляндой, Испания">
+                <div class="element__text">
+                    <h2 class="element__place">Барселона</h2>
+                    <button class="element__like" type="button"></button>
                 </div>
-            </div>
-            <div class="elements__element">
-                <img src="./images/ryan-ancill-T0ab9tVz99o-unsplash.jpg" class="elements__image" alt="Пляж Санта-Моника в Калифорнии, США">
-                <div class="elements__text">
-                    <h3 class="elements__place">Санта-Моника, Калифорния</h3>
-                    <div class="elements__like"></div>
+            </article>
+            <article class="element">
+                <img src="./images/ryan-ancill-T0ab9tVz99o-unsplash.jpg" class="element__image" alt="Пляж Санта-Моника в Калифорнии, США">
+                <div class="element__text">
+                    <h2 class="element__place">Санта-Моника, Калифорния</h2>
+                    <button class="element__like" type="button"></button>
                 </div>
-            </div>
+            </article>
         </section>
     </main>
     <footer class="footer">
-        <h4 class="footer__text">&copy; 2022 Mesto Russia</h4>
+        <p class="footer__text">&copy; 2022 Mesto Russia</p>
     </footer>
 
     <div class="popup">
-        <form class="popup__container">
-            <div class="popup__close-button"></div>
-            <h2 class="popup__heading">Редактировать профиль</h2>
-            <div class="popup__line">
-                <input type="text" name="name" required class="popup__text" value="Жак-Ив Кусто">
-            </div>
-            <div class="popup__line">
-                <input type="text" name="activity" required class="popup__activity" value="Исследователь океана">
-            </div>
-            <button type="submit" class="popup__submit-button">Сохранить</button>
-        </form>
+        <div class="popup__container">
+            <button class="popup__close-button" type="button"></button>
+            <h3 class="popup__heading">Редактировать профиль</h3>
+            <form class="popup__form popup__form_profile" name="profile-form">
+                <input type="text" name="name" required class="popup__input popup__input_text" value="Жак-Ив Кусто">
+                <input type="text" name="activity" required class="popup__input popup__input_activity" value="Исследователь океана">
+                <button type="submit" class="popup__submit-button">Сохранить</button>
+            </form>
+        </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

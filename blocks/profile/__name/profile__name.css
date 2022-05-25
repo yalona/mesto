@@ -12,11 +12,16 @@
     }
 }
 
+@media screen and (max-width: 688px) {
+    .profile__name {
+    text-align: center;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .profile__name {
     margin: 26px auto 14px;
     font-size: 27px;
     line-height: 1.222;
-    text-align: center;
     }
 }
