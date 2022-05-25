@@ -6,7 +6,7 @@
     min-height: 32px;
     position: absolute;
     top: -40px;
-    left: 430px;
+    right: -32px;
 }
 
 .popup__close-button:hover {
@@ -19,7 +19,7 @@
         width: 20px;
         min-height: 20px;
         position: absolute;
-        top: -28px;
-        left: 262px;
+        top: -36px;
+        right: 0;
     }
 }
