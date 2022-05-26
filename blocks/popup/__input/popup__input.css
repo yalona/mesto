@@ -5,10 +5,27 @@ text-align: start;
 padding: 0 0 13px;
 border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 box-sizing: border-box;
+font-weight: 400;
+font-size: 14px;
+line-height: 1.21;
+}
+
+.popup__input:first-child {
+    margin: 54px 0 0;
+}
+
+.popup__input:nth-child(2) {
+    margin: 30px 0 0;
 }
 
 @media screen and (max-width: 940px) {
     .profile__input {
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .popup__input:first-child {
+        margin-top: 75px;
     }
 }

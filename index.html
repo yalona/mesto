@@ -15,9 +15,11 @@
         <section class="profile">
             <div class="profile__avatar" style="background-image: url(./images/image.jpg);"></div>
             <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <button class="profile__edit-button" type="button"></button>
-                <p class="profile__activity">Исследователь океана</p>
+                <div class="profile__text-container">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button class="profile__edit-button" type="button"></button>
+                </div>
+                    <p class="profile__activity">Исследователь океана</p>
             </div>
             <button class="profile__add-button" type="button"></button>
         </section>
@@ -75,9 +77,9 @@
         <div class="popup__container">
             <button class="popup__close-button" type="button"></button>
             <h3 class="popup__heading">Редактировать профиль</h3>
-            <form class="popup__form popup__form_profile" name="profile-form">
-                <input type="text" name="name" required class="popup__input popup__input_text" value="Жак-Ив Кусто">
-                <input type="text" name="activity" required class="popup__input popup__input_activity" value="Исследователь океана">
+            <form class="popup__form popup__form_type_profile" name="profile-form">
+                <input type="text" name="name" required class="popup__input popup__input_field_text" value="Жак-Ив Кусто">
+                <input type="text" name="activity" required class="popup__input popup__input_field_activity" value="Исследователь океана">
                 <button type="submit" class="popup__submit-button">Сохранить</button>
             </form>
         </div>

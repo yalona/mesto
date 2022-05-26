@@ -3,20 +3,25 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 1.222;
+    max-width: 336px;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 533px) {
+@media screen and (max-width: 940px) {
     .profile__activity {
-    text-align: center;
+        max-width: 282px;
+        text-align: center;
+        margin: 0 auto;
     }
 }
 
 @media screen and (max-width: 320px) {
     .profile__activity {
-    margin: 14px auto 36px;
     font-size: 14px;
     line-height: 1.21;
-    text-align: center;
     max-width: 100%;
+    margin-top: 14px;
     }
 }
