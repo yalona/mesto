@@ -8,9 +8,6 @@
 }
 
 @media screen and (max-width: 940px) {
-    .profile__add-button:last-child {
-        align-self: flex-start;
-    }
     .profile {
         flex-direction: column;
     }
@@ -18,7 +15,6 @@
 
 @media screen and (max-width: 533px) {
     .profile {
-        flex-direction: column;
         margin: 42px 5.94% 0;
         max-width: 100%;
     }
