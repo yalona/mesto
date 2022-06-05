@@ -79,7 +79,7 @@
         <p class="footer__text">&copy; 2022 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup_type_profile">
         <div class="popup__container">
             <button class="popup__close-button" type="button"></button>
             <h3 class="popup__heading">Редактировать профиль</h3>
@@ -90,6 +90,18 @@
             </form>
         </div>
     </div>
+    <div class="popup popup_type_new-pic">
+        <div class="popup__container">
+            <button class="popup__close-button" type="button"></button>
+            <h3 class="popup__heading">Новое место</h3>
+            <form class="popup__form popup__form_type_new-pic" name="newPic-form">
+                <input type="text" name="place-name" required class="popup__input popup__input_field_place-name" value="Название">
+                <input type="url" name="pic-url" required class="popup__input popup__input_field_pic-url" value="Ссылка на картинку">
+                <button type="submit" class="popup__submit-button">Сохранить</button>
+            </form>
+        </div>  
+    </div>
+
     <script src="./scripts/index.js"></script>
 </body>
 </html>
