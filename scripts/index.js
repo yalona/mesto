@@ -47,3 +47,47 @@ closeButton.forEach(function (btn) {
     popupOpenedRemove(popupNewPic);
 })
  });
+
+//  Массив картинок
+ const initialCards = [
+    {
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+  ];
+
+const elements = document.querySelector('.elements');
+const image = document.querySelector('.element__image');
+const text = document.querySelector('.element__place');
+const template = document.querySelector('.element__template');
+
+// Добавление карточек при загрузке из массива
+initialCards.forEach(function(item){
+  const initialCardsElement = template.content.cloneNode(true);
+  console.log(initialCardsElement);
+ 
+  initialCardsElement.querySelector('.element__place').textContent = item.name;
+  initialCardsElement.querySelector('.element__image').src = item.link;
+
+  elements.prepend(initialCardsElement);
+})
