@@ -1,3 +1,5 @@
+// попап изменения данных профиля
+let popup = document.querySelectorAll('.popup');
 let popupProfile = document.querySelector('.popup_type_profile');
 let popupNewPic = document.querySelector('.popup_type_new-pic');
 let popupText = document.querySelector('.popup__input_field_text');
@@ -6,8 +8,6 @@ let popupActivity = document.querySelector('.popup__input_field_activity');
 // функция открытия попапа
 function popupOpenedAdd(element) {
     element.classList.add('popup_opened');
-    popupText.value = document.querySelector('.profile__name').textContent;
-    popupActivity.value = document.querySelector('.profile__activity').textContent;
 }
 // открытие формы с параметрами профиля
 let editButton = document.querySelector('.profile__edit-button');
@@ -18,13 +18,14 @@ function popupOpenedRemove(element) {
     element.classList.remove('popup_opened');  
 }
 
-// Закрытие попапа
+// Закрытие попапа профиль по крестику
 let closeButton = document.querySelectorAll('.popup__close-button');
 closeButton.forEach(function (btn) {
-    btn.addEventListener('click', () => {
-    popupOpenedRemove(popupProfile);
+  btn.addEventListener('click', (popup) => {
+  popupOpenedRemove(popupProfile);
 })
  });
+
 // функция сохранения параметров из формы в профиль
 let FormProfile = document.querySelector('.popup__form_type_profile');
 function formSubmitHandler(evt) {
@@ -37,19 +38,13 @@ function formSubmitHandler(evt) {
 }
 FormProfile.addEventListener('submit', formSubmitHandler);
 
+// попап добавления карточек
 // открытие формы добавления картинок
 const addButton = document.querySelector('.profile__add-button');
 addButton.addEventListener('click', () => popupOpenedAdd(popupNewPic));
 
-// Закрытие попапа
-closeButton.forEach(function (btn) {
-    btn.addEventListener('click', () => {
-    popupOpenedRemove(popupNewPic);
-})
- });
-
 //  Массив картинок
- const initialCards = [
+ let initialCards = [
     {
       name: 'Архыз',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -76,18 +71,54 @@ closeButton.forEach(function (btn) {
     }
   ];
 
-const elements = document.querySelector('.elements');
-const image = document.querySelector('.element__image');
-const text = document.querySelector('.element__place');
-const template = document.querySelector('.element__template');
-
 // Добавление карточек при загрузке из массива
-initialCards.forEach(function(item){
-  const initialCardsElement = template.content.cloneNode(true);
-  console.log(initialCardsElement);
- 
-  initialCardsElement.querySelector('.element__place').textContent = item.name;
-  initialCardsElement.querySelector('.element__image').src = item.link;
+const elements = document.querySelector('.elements');
+const element = document.querySelector('.element');
+const newPicInputName = document.querySelector('.popup__input_field_place-name');
+const newPicInputPic = document.querySelector('.popup__input_field_pic-url');
+  
+function createCard(element) {
+  const initialCardsTemplate = document.querySelector('.elements__template').content;
+  const initialCardsElement = initialCardsTemplate.querySelector('.element').cloneNode(true);
+
+  initialCardsElement.querySelector('.element__place').textContent = element.name;
+  initialCardsElement.querySelector('.element__image').src = element.link;
 
   elements.prepend(initialCardsElement);
+  
+ // Кнопка лайка
+initialCardsElement.querySelector('.element__like')
+.addEventListener('click', function(evt) {
+  evt.target.classList.toggle('element__like_active');
+});
+
+ // кнопка удаления карточки
+initialCardsElement.querySelector('.element__trash')
+.addEventListener('click', function(evt){
+evt.target.parentElement.remove();
 })
+};
+
+initialCards.forEach(createCard);
+
+// Добавление данных из инпутов в карточку
+ function addCard(evt) {
+  evt.preventDefault();
+  const cardInfo = {
+  name: newPicInputName.value,
+  link: newPicInputPic.value,  
+  };
+  initialCardsElement = createCard(cardInfo);
+  popupOpenedRemove(popupNewPic);
+  }
+ 
+const formNewPic = document.querySelector('.popup__form_type_new-pic');
+
+formNewPic.addEventListener('submit', addCard);
+
+// Закрытие попапа новых карточек по крестику
+closeButton.forEach(function (btn) {
+  btn.addEventListener('click', () => {
+  popupOpenedRemove(popupNewPic);
+})
+ });

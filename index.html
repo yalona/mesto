@@ -26,17 +26,17 @@
 
         <section class="elements">
 
-            <template class="element__template">
-                <article class="element">
-                    <img src="" class="element__image" alt="">
-                    <button class="element__trash" type="button"></button>
-                    <div class="element__text">
-                        <h2 class="element__place"></h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </article>    
-            </template>
         </section>
+        <template class="elements__template">
+            <article class="element">
+                <img src="" class="element__image" alt="">
+                <button class="element__trash" type="button"></button>
+                <div class="element__text">
+                    <h2 class="element__place"></h2>
+                    <button class="element__like" type="button"></button>
+                </div>
+            </article>    
+        </template>
     </main>
     <footer class="footer">
         <p class="footer__text">&copy; 2022 Mesto Russia</p>
@@ -58,8 +58,8 @@
             <button class="popup__close-button" type="button"></button>
             <h3 class="popup__heading">Новое место</h3>
             <form class="popup__form popup__form_type_new-pic" name="newPic-form">
-                <input type="text" name="place-name" required class="popup__input popup__input_field_place-name" value="Название">
-                <input type="url" name="pic-url" required class="popup__input popup__input_field_pic-url" value="Ссылка на картинку">
+                <input type="text" name="place-name" required class="popup__input popup__input_field_place-name" placeholder="Название">
+                <input type="url" name="pic-url" required class="popup__input popup__input_field_pic-url" placeholder="Ссылка на картинку">
                 <button type="submit" class="popup__submit-button">Сохранить</button>
             </form>
         </div>  
