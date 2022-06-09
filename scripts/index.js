@@ -1,4 +1,3 @@
-// попап изменения данных профиля
 let popup = document.querySelectorAll('.popup');
 let popupProfile = document.querySelector('.popup_type_profile');
 let popupNewPic = document.querySelector('.popup_type_new-pic');
@@ -38,7 +37,6 @@ function formSubmitHandler(evt) {
 }
 FormProfile.addEventListener('submit', formSubmitHandler);
 
-// попап добавления карточек
 // открытие формы добавления картинок
 const addButton = document.querySelector('.profile__add-button');
 addButton.addEventListener('click', () => popupOpenedAdd(popupNewPic));
@@ -134,9 +132,8 @@ initialCards.forEach(createCard);
   initialCardsElement = createCard(cardInfo);
   popupOpenedRemove(popupNewPic);
   }
- 
-const formNewPic = document.querySelector('.popup__form_type_new-pic');
 
+const formNewPic = document.querySelector('.popup__form_type_new-pic');
 formNewPic.addEventListener('submit', addCard);
 
 // Закрытие попапа новых карточек по крестику
