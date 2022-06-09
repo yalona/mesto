@@ -97,7 +97,30 @@ initialCardsElement.querySelector('.element__trash')
 .addEventListener('click', function(evt){
 evt.target.parentElement.remove();
 })
-};
+
+// открытие попапа с картинкой
+function openImage(){
+  const card = document.querySelector('.popup__image').closest('.popup__container_type_newPic');
+  const title = card.querySelector('.popup__image-text');
+
+  document.querySelector('.popup__image').src = initialCardsElement.querySelector('.element__image').src;
+  title.textContent = initialCardsElement.querySelector('.element__place').textContent;
+}
+
+const popupOpenPic = document.querySelector('.popup_type_open-pic');
+
+initialCardsElement.querySelector('.element__image').addEventListener('click', () => {
+popupOpenedAdd(popupOpenPic);
+openImage();
+});
+
+// Закрытие попапа с картинкой
+closeButton.forEach(function (btn) {
+  btn.addEventListener('click', () => {
+  popupOpenedRemove(popupOpenPic);
+  });
+ });
+}
 
 initialCards.forEach(createCard);
 
@@ -117,7 +140,7 @@ const formNewPic = document.querySelector('.popup__form_type_new-pic');
 formNewPic.addEventListener('submit', addCard);
 
 // Закрытие попапа новых карточек по крестику
-closeButton.forEach(function (btn) {
+  closeButton.forEach(function (btn) {
   btn.addEventListener('click', () => {
   popupOpenedRemove(popupNewPic);
 })
