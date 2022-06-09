@@ -98,7 +98,7 @@ evt.target.parentElement.remove();
 
 // открытие попапа с картинкой
 function openImage(){
-  const card = document.querySelector('.popup__image').closest('.popup__container_type_newPic');
+  const card = document.querySelector('.popup__image').closest('.popup__container_type_new-pic');
   const title = card.querySelector('.popup__image-text');
 
   document.querySelector('.popup__image').src = initialCardsElement.querySelector('.element__image').src;
