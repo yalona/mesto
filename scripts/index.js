@@ -127,8 +127,9 @@ initialCards.forEach(createCard);
   evt.preventDefault();
   const cardInfo = {
   name: newPicInputName.value,
-  link: newPicInputPic.value,  
+  link: newPicInputPic.value,
   };
+  evt.target.reset(); 
   initialCardsElement = createCard(cardInfo);
   popupOpenedRemove(popupNewPic);
   }
