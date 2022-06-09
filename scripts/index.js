@@ -1,15 +1,14 @@
-let popup = document.querySelectorAll('.popup');
-let popupProfile = document.querySelector('.popup_type_profile');
-let popupNewPic = document.querySelector('.popup_type_new-pic');
-let popupText = document.querySelector('.popup__input_field_text');
-let popupActivity = document.querySelector('.popup__input_field_activity');
+const popupProfile = document.querySelector('.popup_type_profile');
+const popupNewPic = document.querySelector('.popup_type_new-pic');
+const popupText = document.querySelector('.popup__input_field_text');
+const popupActivity = document.querySelector('.popup__input_field_activity');
 
 // функция открытия попапа
 function popupOpenedAdd(element) {
     element.classList.add('popup_opened');
 }
 // открытие формы с параметрами профиля
-let editButton = document.querySelector('.profile__edit-button');
+const editButton = document.querySelector('.profile__edit-button');
 editButton.addEventListener('click', () => popupOpenedAdd(popupProfile));
  
 // Удаление класса из попапа для закрытия
@@ -18,19 +17,19 @@ function popupOpenedRemove(element) {
 }
 
 // Закрытие попапа профиль по крестику
-let closeButton = document.querySelectorAll('.popup__close-button');
-closeButton.forEach(function (btn) {
+const closeButtons = document.querySelectorAll('.popup__close-button');
+closeButtons.forEach(function (btn) {
   btn.addEventListener('click', (popup) => {
   popupOpenedRemove(popupProfile);
 })
  });
 
 // функция сохранения параметров из формы в профиль
-let FormProfile = document.querySelector('.popup__form_type_profile');
+const FormProfile = document.querySelector('.popup__form_type_profile');
 function formSubmitHandler(evt) {
     evt.preventDefault();
-    let profileName = document.querySelector('.profile__name');
-    let profileActivity = document.querySelector('.profile__activity');
+    const profileName = document.querySelector('.profile__name');
+    const profileActivity = document.querySelector('.profile__activity');
     profileName.textContent = popupText.value;
     profileActivity.textContent = popupActivity.value;
     popupOpenedRemove(popupProfile);
@@ -42,7 +41,7 @@ const addButton = document.querySelector('.profile__add-button');
 addButton.addEventListener('click', () => popupOpenedAdd(popupNewPic));
 
 //  Массив картинок
- let initialCards = [
+ const initialCards = [
     {
       name: 'Архыз',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -113,7 +112,7 @@ openImage();
 });
 
 // Закрытие попапа с картинкой
-closeButton.forEach(function (btn) {
+closeButtons.forEach(function (btn) {
   btn.addEventListener('click', () => {
   popupOpenedRemove(popupOpenPic);
   });
@@ -138,7 +137,7 @@ const formNewPic = document.querySelector('.popup__form_type_new-pic');
 formNewPic.addEventListener('submit', addCard);
 
 // Закрытие попапа новых карточек по крестику
-  closeButton.forEach(function (btn) {
+  closeButtons.forEach(function (btn) {
   btn.addEventListener('click', () => {
   popupOpenedRemove(popupNewPic);
 })
