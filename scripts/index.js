@@ -10,6 +10,10 @@ function addOpenedPopup(element) {
 // открытие формы с параметрами профиля
 const editButton = document.querySelector('.profile__edit-button');
 editButton.addEventListener('click', () => addOpenedPopup(popupProfile));
+
+function removeOpenedPopup(element) {
+  element.classList.remove('popup_opened');
+}
  
 // Закрытие попапа по крестику
 const closeButtons = document.querySelectorAll('.popup__close-button');
@@ -24,11 +28,12 @@ btn.addEventListener('click', (evt)=> {
 closePopupClick();
 
 // функция сохранения параметров из формы в профиль
+    const profileName = document.querySelector('.profile__name');
+    const profileActivity = document.querySelector('.profile__activity');
+
 const formProfile = document.querySelector('.popup__form_type_profile');
 function addProfileSubmitHandler(evt) {
     evt.preventDefault();
-    const profileName = document.querySelector('.profile__name');
-    const profileActivity = document.querySelector('.profile__activity');
     profileName.textContent = popupText.value;
     profileActivity.textContent = popupActivity.value;
     removeOpenedPopup(popupProfile);
@@ -73,12 +78,14 @@ const element = document.querySelector('.element');
 const newPicInputName = document.querySelector('.popup__input_field_place-name');
 const newPicInputPic = document.querySelector('.popup__input_field_pic-url');
   
+
 function createCard(element) {
   const initialCardsTemplate = document.querySelector('.elements__template').content;
   const initialCardsElement = initialCardsTemplate.querySelector('.element').cloneNode(true);
 
   initialCardsElement.querySelector('.element__place').textContent = element.name;
   initialCardsElement.querySelector('.element__image').src = element.link;
+  initialCardsElement.querySelector('.element__image').alt = element.name;
 
   cards.prepend(initialCardsElement);
   
@@ -93,15 +100,15 @@ initialCardsElement.querySelector('.element__trash')
 .addEventListener('click', function(evt){
 evt.target.parentElement.remove();
 })
-
 // открытие попапа с картинкой
 function openImage(){
   const card = document.querySelector('.popup__image').closest('.popup__container_type_new-pic');
   const title = card.querySelector('.popup__image-text');
 
   document.querySelector('.popup__image').src = initialCardsElement.querySelector('.element__image').src;
+  document.querySelector('.popup__image').alt = initialCardsElement.querySelector('.element__place').textContent;
   title.textContent = initialCardsElement.querySelector('.element__place').textContent;
-}
+};
 
 const popupOpenPic = document.querySelector('.popup_type_open-pic');
 
@@ -109,8 +116,7 @@ initialCardsElement.querySelector('.element__image').addEventListener('click', (
 addOpenedPopup(popupOpenPic);
 openImage();
 });
-}
-
+};
 
 
 initialCards.forEach(createCard);
