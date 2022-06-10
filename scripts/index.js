@@ -11,20 +11,17 @@ function addOpenedPopup(element) {
 const editButton = document.querySelector('.profile__edit-button');
 editButton.addEventListener('click', () => addOpenedPopup(popupProfile));
  
-// Удаление класса из попапа для закрытия
-function removeOpenedPopup(element) {
-    element.classList.remove('popup_opened');  
-}
-
 // Закрытие попапа по крестику
-const popups = document.querySelectorAll('.popup');
 const closeButtons = document.querySelectorAll('.popup__close-button');
-function closePopupClick(evt){
-  removeOpenedPopup(evt.target.closest('.popup'));
+function closePopupClick() {
+closeButtons.forEach((btn) => {
+btn.addEventListener('click', (evt)=> {
+  evt.target.closest('.popup').classList.remove('popup_opened');
+})
+})
 }
 
-// закрытие попапа редактирования профиля
-popupProfile.addEventListener('click', closePopupClick);
+closePopupClick();
 
 // функция сохранения параметров из формы в профиль
 const formProfile = document.querySelector('.popup__form_type_profile');
@@ -112,9 +109,6 @@ initialCardsElement.querySelector('.element__image').addEventListener('click', (
 addOpenedPopup(popupOpenPic);
 openImage();
 });
-
-// закрытие попапа с картинкой по крестику
-popupOpenPic.addEventListener('click', closePopupClick);
 }
 
 
@@ -135,6 +129,3 @@ initialCards.forEach(createCard);
 
 const formNewPic = document.querySelector('.popup__form_type_new-pic');
 formNewPic.addEventListener('submit', addCard);
-
-// Закрытие попапа новых карточек по крестику
- popupNewPic.addEventListener('click', closePopupClick);
