@@ -8,8 +8,17 @@ function addOpenedPopup(element) {
     element.classList.add('popup_opened');
 }
 // открытие формы с параметрами профиля
+const profileName = document.querySelector('.profile__name');
+const profileActivity = document.querySelector('.profile__activity');
+
+// заполнение полей из value попапа редактирования при загрузке
+profileName.textContent = popupText.value;
+profileActivity.textContent = popupActivity.value;
+
 const editButton = document.querySelector('.profile__edit-button');
-editButton.addEventListener('click', () => addOpenedPopup(popupProfile));
+editButton.addEventListener('click', () => {
+addOpenedPopup(popupProfile);
+});
 
 function removeOpenedPopup(element) {
   element.classList.remove('popup_opened');
@@ -28,9 +37,6 @@ btn.addEventListener('click', (evt)=> {
 closePopupClick();
 
 // функция сохранения параметров из формы в профиль
-    const profileName = document.querySelector('.profile__name');
-    const profileActivity = document.querySelector('.profile__activity');
-
 const formProfile = document.querySelector('.popup__form_type_profile');
 function addProfileSubmitHandler(evt) {
     evt.preventDefault();
