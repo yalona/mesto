@@ -108,7 +108,7 @@ evt.target.parentElement.remove();
 return card;
 };
 
-// вставка карточки
+// вставка карточек
 initialCards.forEach((element) => {
   const card = createCard(element);
   cards.prepend(card);
@@ -122,7 +122,7 @@ function addCard(evt) {
   link: newPicInputPic.value,
   };
   evt.target.reset(); 
-  createCard(cardInfo);
+  cards.prepend(createCard(cardInfo));
   removeOpenedPopup(popupNewPic);
 };
 
