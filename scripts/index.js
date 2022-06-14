@@ -20,6 +20,7 @@ editButton.addEventListener('click', () => {
 addOpenedPopup(popupProfile);
 });
 
+// закрытие попапа
 function removeOpenedPopup(element) {
   element.classList.remove('popup_opened');
 }
@@ -29,7 +30,8 @@ const closeButtons = document.querySelectorAll('.popup__close-button');
 function closePopupClick() {
 closeButtons.forEach((btn) => {
 btn.addEventListener('click', (evt)=> {
-  evt.target.closest('.popup').classList.remove('popup_opened');
+  const popup = evt.target.closest('.popup');
+  removeOpenedPopup(popup);
 })
 })
 }
