@@ -18,6 +18,8 @@ profileActivity.textContent = popupActivity.value;
 const editButton = document.querySelector('.profile__edit-button');
 editButton.addEventListener('click', () => {
 addOpenedPopup(popupProfile);
+popupText.value = profileName.textContent;
+popupActivity.value = profileActivity.textContent;
 });
 
 // закрытие попапа
