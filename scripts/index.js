@@ -148,6 +148,7 @@ const title = card.querySelector('.element__place');
 
 popupImage.src = image.src;
 popupTitle.textContent = title.textContent;
+popupImage.alt = title.textContent;
 
 addOpenedPopup(popupOpenPic);
 }
